@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GifImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-eB-ae7">
+                                <rect key="frame" x="0.0" y="121" width="375" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gcg-eB-ae7" secondAttribute="height" multiplier="11:6" id="Or1-68-DBv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1o-yR-gO9">
+                                <rect key="frame" x="285" y="537" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="DIK-WC-Wen"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="QRm-p7-XRD"/>
+                                    <constraint firstAttribute="height" constant="40" id="T4m-sI-gXJ"/>
+                                </constraints>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="stopRuning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0R-JF-vkD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xx-0i-802">
+                                <rect key="frame" x="40" y="537" width="31" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Efg-np-Nes"/>
+                                </constraints>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="startRuning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wkb-nC-g0M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d1o-yR-gO9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="0VE-hh-7uN"/>
+                            <constraint firstItem="Gcg-eB-ae7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bsy-zQ-n1Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1o-yR-gO9" secondAttribute="trailing" constant="40" id="CgA-G4-h1p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2xx-0i-802" secondAttribute="bottom" constant="90" id="WWB-Az-Hjq"/>
+                            <constraint firstItem="2xx-0i-802" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="YXK-9O-Q8H"/>
+                            <constraint firstItem="Gcg-eB-ae7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dYf-5n-WGb"/>
+                            <constraint firstItem="Gcg-eB-ae7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-110" id="mIg-E5-waw"/>
+                            <constraint firstItem="d1o-yR-gO9" firstAttribute="top" secondItem="2xx-0i-802" secondAttribute="top" id="mep-KA-Cls"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2xx-0i-802" secondAttribute="trailing" constant="20" symbolic="YES" id="zsN-8s-eTV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Gcg-eB-ae7" id="mZG-Bk-82s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
