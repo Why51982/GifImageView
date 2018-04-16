@@ -33,11 +33,15 @@ class ViewController: UIViewController {
         for i in 0 ..< frameCount {
             // 获取图片
             guard let cgImage = CGImageSourceCreateImageAtIndex(imageSource, i, nil) else { continue }
-            // 获取时长
-            
-            guard let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, i, nil), let gifInfo = (properties as NSDictionary)[kCGImagePropertyGIFDictionary] as? NSDictionary, let frameDuration = gifInfo[kCGImagePropertyGIFDelayTime] as? NSNumber else { continue }
             let image = UIImage(cgImage: cgImage)
+            if 0 == i {
+                imageView.image = image
+            }
+            
             images.append(image)
+            
+            // 获取时长
+            guard let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, i, nil), let gifInfo = (properties as NSDictionary)[kCGImagePropertyGIFDictionary] as? NSDictionary, let frameDuration = gifInfo[kCGImagePropertyGIFDelayTime] as? NSNumber else { continue }
             duration += frameDuration.doubleValue
         }
         
